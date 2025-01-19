@@ -50,7 +50,7 @@ def generate_response(conversation_history, temperature, max_tokens, language):
         raise RuntimeError("Failed to generate response")
 
 # Streamlit App
-st.title("Personalized AI Assistant")
+st.title("Personalized AI Assistant🔍")
 
 # Sidebar settings
 st.sidebar.title("Settings")
@@ -63,7 +63,7 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
 # User input field
-user_input = st.text_input("Your message", placeholder="Type your question here (Max 500 characters)", max_chars=500)
+user_input = st.chat_input("Type your question here")
 
 # Process user input
 if user_input:
@@ -85,7 +85,7 @@ if user_input:
 
 # Display chat history
 with st.container():
-    for message in reversed(st.session_state["messages"]):  
+    for message in st.session_state["messages"]:  
         if message["role"] == "user":
             st.markdown(f"**You**: {message['content']}")
         else:
