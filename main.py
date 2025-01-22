@@ -92,16 +92,6 @@ with st.container():
             st.markdown(f"**AI**: {message['content']}")
 
 
-# Hide the "View Source" button and Streamlit footer
-hide_streamlit_style = """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
 
 # Sidebar Information
 st.sidebar.info(
